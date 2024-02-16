@@ -3,6 +3,12 @@
 #include <stdint.h>
 
 namespace utils {
+    struct Coordinate
+    {
+        int x;
+        int y;
+    };
+
     typedef enum Direction : uint8_t {
         up      = 0x0001,
         down    = 0x0010,
