@@ -4,21 +4,15 @@
 
 class Tile {
     public:
-        Tile();
+        Tile(uint8_t collision_directions_bitmask, uint8_t interaction_directions_bitmask);
         ~Tile();
-        bool isCollision(utils::Direction direction);
-        bool isInteraction(utils::Direction direction);
+        bool isCollision(utils::Direction player_direction);
+        bool isInteraction(utils::Direction player_direction);
 
     private:
-        int x_pos;
-        int y_pos;
-        bool collidesFromAbove();
-        bool collidesFromBelow();
-        bool collidesFromRight();
-        bool collidesFromLeft();
+        int x_pos_;
+        int y_pos_;
 
-        bool interactsFromAbove();
-        bool interactsFromBelow();
-        bool interactsFromRight();
-        bool interactsFromLeft();
+        uint8_t collision_directions_bitmask_;
+        uint8_t interaction_directions_bitmask_;
 };
