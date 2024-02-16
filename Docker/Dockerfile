@@ -21,5 +21,4 @@ RUN apt-get install libjsoncpp-dev -y
 RUN apt-get install g++ -y
 RUN apt-get install pkgconf -y
 
-# Build with cmake
 WORKDIR /pokemon_game
