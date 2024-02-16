@@ -1,0 +1,1 @@
+docker build --file Docker/Dockerfile -t "pokemon-image" .
