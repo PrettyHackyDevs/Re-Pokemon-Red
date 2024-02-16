@@ -15,6 +15,11 @@ add_library(
 target_include_directories(pokemon-lib PUBLIC include)
 target_include_directories(pokemon-lib PUBLIC ${JSONCPP_INCLUDE_DIRS})
 
+add_library(
+    include/Map.h
+    src/Map.cpp
+)
+
 add_executable(pokemon src/main.cpp)
 
 target_link_libraries(pokemon PRIVATE ${JSONCPP_LIBRARIES})
