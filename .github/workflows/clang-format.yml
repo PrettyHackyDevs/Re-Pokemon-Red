@@ -18,7 +18,7 @@ jobs:
         run: sudo apt-get install -y clang-format
 
       - name: Run Clang-Format
-        run: clang-format -i src/*.cpp game/src/*.cpp game/src/*.hpp tests/integration-tests/*.cpp tests/integration-tests/*.hpp tests/unit-tests/*.cpp tests/unit-tests/*.hpp 0 --style file:.clang-format
+        run: clang-format -i game/src/*.cpp game/src/*.hpp tests/integration-tests/*.cpp tests/integration-tests/*.hpp tests/unit-tests/*.cpp tests/unit-tests/*.hpp 0 --style file:.clang-format
 
       - name: Check for modifications
         id: check_modifications
