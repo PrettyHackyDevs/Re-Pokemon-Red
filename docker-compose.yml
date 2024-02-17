@@ -1,5 +1,5 @@
 services:
-  bash:
+  build-container:
     build: .
     entrypoint: bash
     <<: &default # Define named block: default

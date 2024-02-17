@@ -16,3 +16,5 @@ target_link_libraries(pokemon-tests PRIVATE ${GTEST_LDFLAGS})
 target_compile_options(pokemon-tests PRIVATE ${GTEST_CFLAGS})
 
 enable_testing()
+
+target_link_libraries(pokemon-tests PRIVATE pokemon-lib)
