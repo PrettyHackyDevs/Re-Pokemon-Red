@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# [This file will be automatically called by docker-compose]
+
+mkdir build
+cd build
+cmake ..
+make
