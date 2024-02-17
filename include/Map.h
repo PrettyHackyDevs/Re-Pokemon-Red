@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Tile.h"
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -19,6 +21,7 @@ class Map {
     public:
 
         Map();
+        ~Map();
         Map(uint16_t id, uint8_t currentType, std::string mapName, std::string bitmapName, tileStdMap tiles, entityStdMap entities);
 
         bool doesItCollide(uint16_t desiredX, uint16_t desiredY, uint8_t direction);
