@@ -4,7 +4,7 @@
 
 int Factorial(int n) {
     //For negative n, n! is defined to be 1.
-    int result = 2;
+    int result = 1;
     for (int i = 1; i <= n; i++) {
     result *= i;
     }
