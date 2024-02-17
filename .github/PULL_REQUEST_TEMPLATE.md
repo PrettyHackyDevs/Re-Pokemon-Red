@@ -1,3 +1,3 @@
-Doneness:
+Doneness checkbox:
 - [ ] Testing
 - [ ] Documentation
