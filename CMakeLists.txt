@@ -1,8 +1,6 @@
 cmake_minimum_required(VERSION 3.27)
-project(Pokemon_Project VERSION 999.0.0)
+project("Pokemon_Project" VERSION 999.0.0)
 set(CMAKE_CXX_STANDARD 17)
-
-project("Re-Pokemon-Red")
 
 add_subdirectory(game)
 add_subdirectory(tests)
