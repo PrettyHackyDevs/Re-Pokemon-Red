@@ -1,0 +1,21 @@
+name: Pull-Request-Checks
+
+run-name: Pull request to ${{ inputs.deploy_target }} by @${{ github.actor }}
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v3
+    - name: Build docker image
+      run: docker-compose build
+    - name: Run tests
+      run: docker-compose run test
+

@@ -1,0 +1,19 @@
+services:
+  build-container:
+    build: .
+    entrypoint: bash
+    <<: &default # Define named block: default
+      image: pokemon-image
+      volumes: 
+      - .:/pokemon_game
+
+  test:
+    <<: *default # Reference named block default (copy-paste)
+    command: bash -c "./.cmake_compile && ./build/tests/pokemon-tests"
+  
+  play:
+    <<: *default # Reference named block default (copy-paste)
+    command: bash -c "./.cmake_compile && ./build/pokemon"
+  
+  inspect:
+      <<: *default # Reference named block default (copy-paste)

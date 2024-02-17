@@ -34,3 +34,7 @@
 # Vscode
 c_cpp_properties.json
 settings.json
+
+# Directories
+build/*
+
