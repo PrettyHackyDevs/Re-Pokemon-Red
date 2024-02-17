@@ -20,5 +20,6 @@ RUN apt-get install liballegro5-dev -y
 RUN apt-get install libjsoncpp-dev -y
 RUN apt-get install g++ -y
 RUN apt-get install pkgconf -y
+RUN apt-get install libgtest-dev -y
 
 WORKDIR /pokemon_game
