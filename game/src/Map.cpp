@@ -19,7 +19,7 @@ void Map::setId(const uint16_t &id) {
     this->id_ = id;
 }
 void Map::setCurrentType(const uint8_t &currentType) {
-    this->currentType_ currentType;
+    this->currentType_ = currentType;
 }
 void Map::setMapName(const std::string &mapName) {
     this->mapName_ = mapName;
