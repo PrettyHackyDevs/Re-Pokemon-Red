@@ -18,13 +18,10 @@ jobs:
         run: sudo apt-get install -y clang-format
 
       - name: Format source code
-        run: clang-format -i game/src/*.cpp game/src/*.hpp 0 --style file:.clang-format --verbose
+        run: clang-format -i game/**/*.cpp game/**/*.hpp 0 --style file:.clang-format --verbose
 
-      - name: Format unit tests
-        run: clang-format -i tests/unit-tests/*.cpp tests/unit-tests/*.hpp 0 --style file:.clang-format --verbose
-
-      - name: Format integration tests
-        run: clang-format -i tests/integration-tests/*.cpp tests/integration-tests/*.hpp 0 --style file:.clang-format --verbose
+      - name: Format tests
+        run: clang-format -i tests/**/*.cpp tests/**/*.hpp 0 --style file:.clang-format --verbose
 
       - name: Check for modifications
         id: check_modifications
