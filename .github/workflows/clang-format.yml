@@ -1,10 +1,10 @@
-name: Clang-Format
+name: Auto-format source code
 
 on: [push]
 
 jobs:
   clang-format:
-    name: Clang-Format
+    name: Auto-format source code
     runs-on: ubuntu-latest
 
     steps:
