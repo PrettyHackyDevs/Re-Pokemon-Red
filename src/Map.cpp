@@ -1,6 +1,6 @@
 #include "Map.h"
 
-Map::Map(const uint16_t &id, const uint8_t &currentType, const std::string &mapName, const std::string &bitmapName, const tileArray &tiles, const uint16_t &dimensionX, const uint16_t &dimensionY, const entityStdMap &entities) {
+Map::Map(const uint16_t &id, const uint8_t &currentType, const std::string &mapName, const std::string &bitmapName, const tileArray &tiles, const uint16_t &dimensionX, const uint16_t &dimensionY, const entityMap &entities) {
     setId(id);
     setCurrentType(currentType);
     setMapName(mapName);
@@ -34,7 +34,7 @@ void Map::setTiles(const tileArray &tiles, const uint16_t &dimensionX, const uin
     tiles_.resize(boost::extents[dimensionX][dimensionY]); 
     this->tiles_ = tiles;
 }
-void Map::setEntities(const entityStdMap &entities) {
+void Map::setEntities(const entityMap &entities) {
     this->entities_ = entities;
 }
 void Map::setTile(const utils::Coordinate &coordinate, const Tile &tile) {
@@ -53,10 +53,10 @@ const std::string Map::getMapName() {
 const std::string Map::getBitmapName() {
     return bitmapName_;
 }
-const tileStdMap Map::getTiles() {
+const tileArray Map::getTiles() {
     return tiles_;
 }
-const entityStdMap Map::getEntities() {
+const entityMap Map::getEntities() {
     return entities_;
 }
 
