@@ -32,11 +32,9 @@ jobs:
       - name: Commit and push changes
         if: env.modified == 'true'
         run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
           git commit -a -m "Format: ${{github.event.commits[0].message}}"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          GITHUB_TOKEN: ${{ github.token }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
