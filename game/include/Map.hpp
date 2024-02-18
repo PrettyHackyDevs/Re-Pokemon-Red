@@ -1,10 +1,11 @@
 #pragma once
 
-#include <include/Tile.hpp>
+#include <Tile.hpp>
 
 #include <iostream>
 #include <string>
-#include <vector>
+#include <map>
+#include <boost/multi_array.hpp>
 
 using tileArray = boost::multi_array<Tile,2>;
 using entityMap = std::map<uint32_t,entity::Entity>;
