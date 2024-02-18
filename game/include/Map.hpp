@@ -7,7 +7,7 @@
 #include <string>
 
 using tileArray = boost::multi_array<Tile, 2>;
-using entityMap = std::map<uint32_t, entity::Entity>;
+using entityMap = std::map<uint32_t, Entity>;
 
 class Map {
    private:
@@ -20,7 +20,7 @@ class Map {
 
    public:
     Map();
-    Map(const uint16_t& id, const uint8_t& current_type, const std::string& map_name, const std::string& bitmap_name, const tileArray& tiles, const uint16_t& dimensionX, const uint16_t& dimensionY,
+    Map(const uint16_t& id, const uint8_t& current_type, const std::string& map_name, const std::string& bitmap_name, const tileArray& tiles, const uint16_t& length_x, const uint16_t& length_y,
         const entityMap& entities);
     ~Map();
 
@@ -28,7 +28,7 @@ class Map {
     void setCurrentType(const uint8_t& current_type);
     void setMapName(const std::string& map_name);
     void setBitmapName(const std::string& bitmap_name);
-    void setTiles(const tileArray tiles, const uint16_t& dimensionX, const uint16_t& dimensionY);
+    void setTiles(const tileArray tiles, const uint16_t& length_x, const uint16_t& length_y);
     void setEntities(const entityMap& entities);
     void setTile(const utils::Coordinate& coordinate, const Tile& tile);
 
@@ -39,7 +39,7 @@ class Map {
     const tileArray getTiles();
     const entityMap getEntities();
 
-    void swapTiles(Tile tile1, Tile Tile2);
+    void swapTiles(Tile tile_1, Tile tile_2);
 
     bool doesItCollide(const tils::Coordinate& coordinate, const uint8_t& direction);
     bool doesItInteract(const utils::Coordinate& coordinate, const uint8_t& direction);
