@@ -30,7 +30,7 @@ class Map {
     void setBitmapName(const std::string& bitmap_name);
     void setTiles(const tileArray tiles, const uint16_t& length_x, const uint16_t& length_y);
     void setEntities(const entityMap& entities);
-    void setTile(const uint8_t& coordinate, const Tile& tile);
+    void setTile(const utils::Coordinate& coordinate, const Tile& tile);
 
     const uint16_t getId();
     const uint8_t getCurrentType();
@@ -41,8 +41,8 @@ class Map {
 
     void swapTiles(Tile tile_1, Tile tile_2);
 
-    bool doesItCollide(const uint8_t& coordinate, const uint8_t& direction);
-    bool doesItInteract(const uint8_t& coordinate, const uint8_t& direction);
+    bool doesItCollide(const utils::Coordinate& coordinate, const uint8_t& direction);
+    bool doesItInteract(const utils::Coordinate& coordinate, const uint8_t& direction);
     bool isPokemonBattleTriggered();
     bool isTrainerBattleTriggered();
 }

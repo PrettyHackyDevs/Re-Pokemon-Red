@@ -15,7 +15,7 @@ Map::Map(const uint16_t& id, const uint8_t& current_type, const std::string& map
 Map::~Map() {}
 
 void Map::setId(const uint16_t& id) { this->id_ = id; }
-void Map::setcurrentType(const uint8_t& current_type) { this->current_type_ = current_type; }
+void Map::setCurrentType(const uint8_t& current_type) { this->current_type_ = current_type; }
 void Map::setMapName(const std::string& map_name) { this->map_name_ = map_name; }
 void Map::setBitmapName(const std::string& bitmap_name) { this->bitmap_name_ = bitmap_name; }
 void Map::setTiles(const tileArray& tiles, const uint16_t& length_x, const uint16_t& length_y) {
@@ -28,7 +28,7 @@ void Map::setTiles(const tileArray& tiles, const uint16_t& length_x, const uint1
     this->tiles_ = tiles;
 }
 void Map::setEntities(const entityMap& entities) { this->entities_ = entities; }
-void Map::setTile(const uint8_t& coordinate, const Tile& tile) { tiles_[coordinate.x][coordinate.y] = tile; }
+void Map::setTile(const utils::Coordinate& coordinate, const Tile& tile) { tiles_[coordinate.x][coordinate.y] = tile; }
 
 const uint16_t Map::getId() { return id_; }
 const uint8_t Map::getCurrentType() { return current_type_; }
@@ -43,12 +43,12 @@ void Map::swapTiles(Tile& tile_1, Tile& tile_2) {
     tile_2 = tiletmp;
 }
 
-bool Map::doesItCollide(const uint8_t& coordinate, const uint8_t& direction) {
+bool Map::doesItCollide(const utils::Coordinate& coordinate, const uint8_t& direction) {
     Tile tile = tiles_[coordinate.x][coordinate.y];
     return tile.isCollision(direction);
 }
 
-bool Map::doesItInteract(const uint8_t& coordinate, const uint8_t& direction) {
+bool Map::doesItInteract(const utils::Coordinate& coordinate, const uint8_t& direction) {
     Tile tile = tiles_[coordinate.x][coordinate.y];
     return tile.isInteraction(direction);
 }
