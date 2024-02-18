@@ -1,4 +1,8 @@
 # Code style guidelines
+
+This project follows `Google C++ Style Guide` for consistency's sake: https://google.github.io/styleguide/cppguide.html
+
+The following are the guidelines in the style guide you will use the most. In case of doubt refer to the previous link.
 ### Variable naming:
 ```cpp
 std::string table_name;  // OK - snake_case.
