@@ -6,6 +6,9 @@ jobs:
   clang-format:
     name: Clang-Format
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    environment: ${{ github.actor }}_environment
 
     steps:
       - name: Checkout code
@@ -18,10 +21,10 @@ jobs:
         run: sudo apt-get install -y clang-format
 
       - name: Format source code
-        run: clang-format -i game/**/*.cpp game/**/*.hpp 0 --style file:.clang-format --verbose
+        run: clang-format -i game/**/*.cpp game/**/*.hpp --ferror-limit=0 --style file:.clang-format --verbose
 
       - name: Format tests
-        run: clang-format -i tests/**/*.cpp tests/**/*.hpp 0 --style file:.clang-format --verbose
+        run: clang-format -i tests/**/*.cpp tests/**/*.hpp --ferror-limit=0 --style file:.clang-format --verbose
 
       - name: Check for modifications
         id: check_modifications
@@ -31,9 +34,10 @@ jobs:
       - name: Commit and push changes
         if: env.modified == 'true'
         run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git commit -a -m "Format: ${{github.event.commits[0].message}}"
+          git config --global user.email "${{ github.event.commits[0].author.email }}"
+          git config --global user.name "${{ github.event.commits[0].author.name }}"
+          git commit -a -m "Autoformat code"
+
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
