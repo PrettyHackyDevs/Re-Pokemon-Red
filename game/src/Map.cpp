@@ -61,7 +61,7 @@ const entityMap Map::getEntities() {
 }
 
 void Map::swapTiles(Tile &tile1, Tile &tile2) {
-    tileArray tiletmp = tile1;
+    Tile tiletmp = tile1;
     tile1 = tile2;
     tile2 = tiletmp;
 }
