@@ -6,6 +6,8 @@ jobs:
   clang-format:
     name: Clang-Format
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     environment: ${{ github.actor }}_environment
 
     steps:
