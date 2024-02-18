@@ -16,6 +16,9 @@ jobs:
       uses: actions/checkout@v3
     - name: Build docker image
       run: docker-compose build
+      with:
+        cache: 'yarn'
+        cache-dependency-path: yarn.lock
     - name: Run tests
       run: docker-compose run test
 

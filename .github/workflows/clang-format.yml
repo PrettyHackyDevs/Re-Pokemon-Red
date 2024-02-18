@@ -19,6 +19,9 @@ jobs:
 
       - name: Set up Clang-Format
         run: sudo apt-get install -y clang-format
+        with:
+          cache: 'yarn'
+          cache-dependency-path: yarn.lock
 
       - name: Format source code
         run: clang-format -i game/**/*.cpp game/**/*.hpp --ferror-limit=0 --style file:.clang-format --verbose
