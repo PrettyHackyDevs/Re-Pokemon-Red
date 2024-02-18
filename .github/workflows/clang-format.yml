@@ -32,9 +32,9 @@ jobs:
       - name: Commit and push changes
         if: env.modified == 'true'
         run: |
-          git commit -a -m "Format: ${{github.event.commits[0].message}}"
           git config --global user.email "${{ github.event.commits[0].author.email }}"
           git config --global user.name "${{ github.event.commits[0].author.name }}"
+          git commit -a -m "Format: ${{github.event.commits[0].message}}"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
