@@ -6,6 +6,7 @@ jobs:
   clang-format:
     name: Clang-Format
     runs-on: ubuntu-latest
+    environment: ${{ github.actor }}_environment
 
     steps:
       - name: Checkout code
