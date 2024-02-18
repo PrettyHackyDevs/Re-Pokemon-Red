@@ -36,7 +36,7 @@ jobs:
         run: |
           git config --global user.email "${{ github.event.commits[0].author.email }}"
           git config --global user.name "${{ github.event.commits[0].author.name }}"
-          git commit -a -m "Format: ${{github.event.commits[0].message}}"
+          git commit -a -m "Autoformat code"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
