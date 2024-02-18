@@ -24,7 +24,7 @@ jobs:
         id: cache-clang-formatter
         uses: actions/cache@v4
         with:
-          path: clang-formatter
+          path: .github/build-caching
           key: ${{ runner.os }}-clang-formatter
 
       - name: Format source code

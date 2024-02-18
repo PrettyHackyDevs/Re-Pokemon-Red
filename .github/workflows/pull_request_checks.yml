@@ -20,7 +20,7 @@ jobs:
       id: cache-project-dependencies
       uses: actions/cache@v4
       with:
-        path: project-dependencies
+        path: .github/build-caching
         key: ${{ runner.os }}-project-dependencies
     - name: Run tests
       run: docker-compose run test
