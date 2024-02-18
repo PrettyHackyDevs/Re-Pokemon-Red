@@ -16,9 +16,12 @@ jobs:
       uses: actions/checkout@v3
     - name: Build docker image
       run: docker-compose build
+    - name: Cache project dependencies image
+      id: cache-project-dependencies
+      uses: actions/cache@v4
       with:
-        cache: 'yarn'
-        cache-dependency-path: yarn.lock
+        path: project-dependencies
+        key: ${{ runner.os }}-project-dependencies
     - name: Run tests
       run: docker-compose run test
 

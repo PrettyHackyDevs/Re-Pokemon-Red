@@ -19,9 +19,13 @@ jobs:
 
       - name: Set up Clang-Format
         run: sudo apt-get install -y clang-format
+
+      - name: Cache clang image
+        id: cache-clang-formatter
+        uses: actions/cache@v4
         with:
-          cache: 'yarn'
-          cache-dependency-path: yarn.lock
+          path: clang-formatter
+          key: ${{ runner.os }}-clang-formatter
 
       - name: Format source code
         run: clang-format -i game/**/*.cpp game/**/*.hpp --ferror-limit=0 --style file:.clang-format --verbose
