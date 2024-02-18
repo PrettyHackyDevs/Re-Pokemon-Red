@@ -1,4 +1,4 @@
-#include "Map.hpp"
+#include <include/Map.hpp>
 
 Map::Map(const uint16_t &id, const uint8_t &currentType, const std::string &mapName, const std::string &bitmapName, const tileArray &tiles, const uint16_t &dimensionX, const uint16_t &dimensionY, const entityMap &entities) {
     setId(id);
