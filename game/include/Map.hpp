@@ -39,7 +39,7 @@ class Map {
     const tileArray getTiles();
     const entityMap getEntities();
 
-    void swapTiles(Tile tile_1, Tile tile_2);
+    void swapTiles(Tile& tile_1, Tile& tile_2);
 
     bool doesItCollide(const utils::Coordinate& coordinate, const uint8_t& direction);
     bool doesItInteract(const utils::Coordinate& coordinate, const uint8_t& direction);
