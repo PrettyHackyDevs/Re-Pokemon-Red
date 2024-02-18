@@ -1,9 +1,6 @@
 # Re-Pokemon-Red
 
-# Running the game
-- ```$ docker compose build```
-- ```$ docker compose run play```
+### Documentation index
+- [Code style guidelines](./documentation/CODE_STYLE.md)
+- [Building, running and testing with Docker](./documentation/DOCKER.md)
 
-# Testing your changes
-- ```$ docker compose build```
-- ```$ docker compose run test```
