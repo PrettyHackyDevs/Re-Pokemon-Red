@@ -8,6 +8,6 @@ Tile::Tile(uint8_t collision_directions_bitmask, uint8_t interaction_directions_
 
 Tile::~Tile() {}
 
-bool Tile::isCollision(utils::Direction player_direction) { return player_direction & this->collision_directions_bitmask_; }
+bool Tile::isCollision(uint8_t player_direction) { return player_direction & this->collision_directions_bitmask_; }
 
-bool Tile::isInteraction(utils::Direction player_direction) { return player_direction & this->interaction_directions_bitmask_; }
+bool Tile::isInteraction(uint8_t player_direction) { return player_direction & this->interaction_directions_bitmask_; }
