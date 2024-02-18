@@ -28,7 +28,7 @@ void Map::setTiles(const tileArray& tiles, const uint16_t& length_x, const uint1
     this->tiles_ = tiles;
 }
 void Map::setEntities(const entityMap& entities) { this->entities_ = entities; }
-void Map::setTile(const utils::Coordinate& coordinate, const Tile& tile) { tiles_[coordinate.x][coordinate.y] = tile; }
+void Map::setTile(const uint8_t& coordinate, const Tile& tile) { tiles_[coordinate.x][coordinate.y] = tile; }
 
 const uint16_t Map::getId() { return id_; }
 const uint8_t Map::getCurrentType() { return current_type_; }
@@ -43,12 +43,12 @@ void Map::swapTiles(Tile& tile_1, Tile& tile_2) {
     tile_2 = tiletmp;
 }
 
-bool Map::doesItCollide(const utils::Coordinate& coordinate, const uint8_t& direction) {
+bool Map::doesItCollide(const uint8_t& coordinate, const uint8_t& direction) {
     Tile tile = tiles_[coordinate.x][coordinate.y];
     return tile.isCollision(direction);
 }
 
-bool Map::doesItInteract(const utils::Coordinate& coordinate, const uint8_t& direction) {
+bool Map::doesItInteract(const uint8_t& coordinate, const uint8_t& direction) {
     Tile tile = tiles_[coordinate.x][coordinate.y];
     return tile.isInteraction(direction);
 }
