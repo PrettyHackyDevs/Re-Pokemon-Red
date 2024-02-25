@@ -2,6 +2,12 @@
 
 using namespace _movement;
 
+Movement::Movement(utils::Coordinate coordinate, uint8_t direction) {
+    coordinate_.x = coordinate.x;
+    coordinate_.y = coordinate.y;
+    direction_ = direction;
+}
+
 void Movement::setCoordinate(utils::Coordinate coordinate) {
     coordinate_.x = coordinate.x;
     coordinate_.y = coordinate.y;

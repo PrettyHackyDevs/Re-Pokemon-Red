@@ -11,6 +11,9 @@ protected:
     uint8_t direction_;
 
 public:
+    Movement();
+    Movement(utils::Coordinate coordinate, uint8_t direction);
+    ~Movement();
     void setCoordinate(utils::Coordinate coordinate);
     void setDirection(uint8_t direction);
     void setX(int16_t x);
