@@ -1,5 +1,5 @@
-#include <include/Tile.hpp>
-#include <include/utils.hpp>
+#include "../include/Tile.hpp"
+#include "../include/utils.hpp"
 
 Tile::Tile(uint8_t collision_directions_bitmask, uint8_t interaction_directions_bitmask) {
         this->collision_directions_bitmask_ = collision_directions_bitmask;

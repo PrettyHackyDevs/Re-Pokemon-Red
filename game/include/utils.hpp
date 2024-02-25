@@ -9,7 +9,7 @@ namespace utils {
         int y;
     };
 
-    typedef enum Direction : uint8_t {
+    enum Direction : uint8_t {
         up      = 0b00000001,
         down    = 0b00000010,
         left    = 0b00000100,
