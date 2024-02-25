@@ -10,8 +10,8 @@ protected:
     utils::Coordinate coordinate_;
     uint8_t direction_;
 
-    utils::Coordinate futureCoordinate_;
-    uint8_t futureDirection_;
+    utils::Coordinate future_coordinate_;
+    uint8_t future_direction_;
 
 public:
     Movement();

@@ -30,13 +30,13 @@ void Movement::setFutureCoordinate(utils::Coordinate coordinate) {
     setFutureY(coordinate.y);
 }
 void Movement::setFutureDirection(uint8_t direction) {
-    futureDirection_ = direction;
+    future_direction_ = direction;
 }
 void Movement::setFutureX(int16_t X) {
-    futureCoordinate_.x = X;
+    future_coordinate_.x = X;
 }
 void Movement::setFutureY(int16_t Y) {
-    futureCoordinate_.y = Y;
+    future_coordinate_.y = Y;
 }
 
 utils::Coordinate Movement::getCoordinate() {
@@ -52,36 +52,36 @@ int16_t Movement::getY() {
     return coordinate_.y;
 }
 utils::Coordinate Movement::getFutureCoordinate() {
-    return futureCoordinate_;
+    return future_coordinate_;
 }
 uint8_t Movement::getFutureDirection() {
-    return futureDirection_;
+    return future_direction_;
 }
 int16_t Movement::getFutureX() {
-    return futureCoordinate_.x;
+    return future_coordinate_.x;
 }
 int16_t Movement::getFutureY() {
-    return futureCoordinate_.y;
+    return future_coordinate_.y;
 }
 
 void Movement::moveUp() {
-    futureCoordinate_.y++;
+    future_coordinate_.y++;
     setFutureDirection(utils::Direction::up);
 }
 void Movement::moveDown() {
-    futureCoordinate_.y--;
+    future_coordinate_.y--;
     setFutureDirection(utils::Direction::down);
 }
 void Movement::moveRight() {
-    futureCoordinate_.x++;
+    future_coordinate_.x++;
     setFutureDirection(utils::Direction::right);
 }
 void Movement::moveLeft() {
-    futureCoordinate_.x--;
+    future_coordinate_.x--;
     setFutureDirection(utils::Direction::left);
 }
 
 void Movement::updateStatus() {
-    setCoordinate(futureCoordinate_);
-    setDirection(futureDirection_);
+    setCoordinate(future_coordinate_);
+    setDirection(future_direction_);
 }
