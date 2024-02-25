@@ -5,8 +5,8 @@
 namespace utils {
     struct Coordinate
     {
-        int x;
-        int y;
+        int16_t x;
+        int16_t y;
     };
 
     typedef enum Direction : uint8_t {
