@@ -37,9 +37,7 @@ const std::string Map::getBitmapName() { return bitmap_name_; }
 const tileArray Map::getTiles() { return tiles_; }
 const entityMap Map::getEntities() { return entities_; }
 
-void Map::swapTiles(Tile& tile_1, Tile& tile_2) {
-    std::swap(tile_1, tile_2);
-}
+void Map::swapTiles(Tile& tile_1, Tile& tile_2) { std::swap(tile_1, tile_2); }
 
 bool Map::doesItCollide(const utils::Coordinate& coordinate, const uint8_t& direction) {
     Tile tile = tiles_[coordinate.x][coordinate.y];
