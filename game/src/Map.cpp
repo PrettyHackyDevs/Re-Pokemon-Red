@@ -20,8 +20,8 @@ void Map::setMapName(const std::string& map_name) { this->map_name_ = map_name; 
 void Map::setBitmapName(const std::string& bitmap_name) { this->bitmap_name_ = bitmap_name; }
 void Map::setTiles(const tileArray& tiles, const uint16_t& length_x, const uint16_t& length_y) {
     if (length_x == 0 || length_y == 0) {
-        SPDLOG_ERROR("The tile matrix that is being set has a dimension of value 0. Exiting. ");
-        throw;
+        SPDLOG_ERROR("The tile matrix that is being set has dimension 0. Exiting. ");
+        throw std::invalid_argument("The tile matrix that is being set has dimension 0.");
         return;
     }
     tiles_.resize(boost::extents[length_x][length_y]);
@@ -38,9 +38,7 @@ const tileArray Map::getTiles() { return tiles_; }
 const entityMap Map::getEntities() { return entities_; }
 
 void Map::swapTiles(Tile& tile_1, Tile& tile_2) {
-    Tile tiletmp = tile_1;
-    tile_1 = tile_2;
-    tile_2 = tiletmp;
+    std::swap(tile_1, tile_2);
 }
 
 bool Map::doesItCollide(const utils::Coordinate& coordinate, const uint8_t& direction) {
