@@ -1,4 +1,5 @@
-#include<Movement.hpp>
+#include <Movement.hpp>
+
 #include "gtest/gtest.h"
 
 using namespace _movement;
@@ -13,7 +14,6 @@ void resetState() {
 }
 
 bool movingUp(int numberOfSteps) {
-    
     resetState();
 
     Movement my_movement(coordinate, direction);
@@ -24,28 +24,25 @@ bool movingUp(int numberOfSteps) {
     uint8_t updated_future_direction = my_movement.getFutureDirection();
 
     bool result_x = false;
-    if(updated_coordinates.x == updated_future_coordinates.x) {
+    if (updated_coordinates.x == updated_future_coordinates.x) {
         result_x == true;
     }
     bool result_y = false;
-    if( (updated_coordinates.y+1) == updated_future_coordinates.y) {
+    if ((updated_coordinates.y + 1) == updated_future_coordinates.y) {
         result_y == true;
     }
     bool result_direction = false;
-    if(updated_direction == utils::Direction::none && updated_future_direction == utils::Direction::up) {
+    if (updated_direction == utils::Direction::none && updated_future_direction == utils::Direction::up) {
         result_direction == true;
     }
 
     return result_x & result_y & result_direction;
 
     resetState();
-
 }
 
 namespace {
 
-TEST() {
-    EXPECT_EQ(true, movingUp(1));
-}
+TEST() { EXPECT_EQ(true, movingUp(1)); }
 
-}
+}  // namespace

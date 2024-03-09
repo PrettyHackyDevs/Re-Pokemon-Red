@@ -5,15 +5,14 @@
 namespace _movement {
 
 class Movement {
-
-protected:
+   protected:
     utils::Coordinate coordinate_;
     uint8_t direction_;
 
     utils::Coordinate future_coordinate_;
     uint8_t future_direction_;
 
-public:
+   public:
     Movement();
     Movement(utils::Coordinate coordinate, uint8_t direction);
     ~Movement();
@@ -41,8 +40,6 @@ public:
     void moveRight();
     void moveLeft();
     void updateStatus();
-
-
 };
 
-};
+};  // namespace _movement
