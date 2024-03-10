@@ -13,7 +13,7 @@ void resetState() {
     direction = utils::Direction::none;
 }
 
-bool movingUp(int numberOfSteps) {
+bool MovingUp(int numberOfSteps) {
     resetState();
 
     Movement my_movement(coordinate, direction);
@@ -22,6 +22,9 @@ bool movingUp(int numberOfSteps) {
     uint8_t updated_direction = my_movement.getDirection();
     utils::Coordinate updated_future_coordinates = my_movement.getFutureCoordinate();
     uint8_t updated_future_direction = my_movement.getFutureDirection();
+
+    std::cout<<"updated_coordinates = "<<updated_coordinates.x<<","<<updated_coordinates.y<<endl;
+    std::cout<<"updated_future_coordinates = "<<updated_future_coordinates.x<<","<<updated_future_coordinates.y<<endl;
 
     bool result_x = false;
     if (updated_coordinates.x == updated_future_coordinates.x) {
@@ -43,6 +46,6 @@ bool movingUp(int numberOfSteps) {
 
 namespace {
 
-TEST() { EXPECT_EQ(true, movingUp(1)); }
+TEST(MovingUpTest, Positive) { EXPECT_EQ(true, MovingUp(1)); }
 
 }  // namespace

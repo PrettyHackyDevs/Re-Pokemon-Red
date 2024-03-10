@@ -2,6 +2,16 @@
 
 using namespace _movement;
 
+Movement::Movement() {
+    setX(0);
+    setY(0);
+    setDirection(0b00010000);
+
+    setFutureX(0);
+    setFutureY(0);
+    setFutureDirection(0b00010000);
+}
+
 Movement::Movement(utils::Coordinate coordinate, uint8_t direction) {
     setX(coordinate.x);
     setY(coordinate.y);
@@ -10,6 +20,16 @@ Movement::Movement(utils::Coordinate coordinate, uint8_t direction) {
     setFutureX(coordinate.x);
     setFutureY(coordinate.y);
     setFutureDirection(direction);
+}
+
+Movement::~Movement() {
+    setX(0);
+    setY(0);
+    setDirection(0b00010000);
+
+    setFutureX(0);
+    setFutureY(0);
+    setFutureDirection(0b00010000);
 }
 
 void Movement::setCoordinate(utils::Coordinate coordinate) {
