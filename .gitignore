@@ -37,4 +37,4 @@ settings.json
 
 # Directories
 build/*
-
+external_libs/*
